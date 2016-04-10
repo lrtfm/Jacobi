@@ -1,5 +1,7 @@
 function [ x, omega ] = JacobiGaussLobatto( alpha, beta, N )
-    [ y, w ] = JacobiGauss( alpha+1, beta+1, N - 2 );
+    % JacobiGaussLobatto
+    
+    [ y, w ] = Jacobi.JacobiGauss( alpha+1, beta+1, N - 2 );
     x = [ -1; y; 1];
     g0 = 2*gammaln(beta + 1) + gammaln(N) + gammaln(N + alpha + 1) -...
         gammaln(N + beta + 1) - gammaln(N + alpha + beta + 2);
